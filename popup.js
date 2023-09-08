@@ -46,20 +46,6 @@ async function getCurrentTab() {
   return tab.id;
 }
 
-// async function autofillLogin(account) {
-//   const tabId = await getCurrentTab();
-//   chrome.scripting.executeScript({
-//     // code: `
-//     //     `,
-//     target: { tabId },
-//     function: () => {
-//       document.getElementById("account").value = account.account;
-//       document.getElementById("username").value = account.username;
-//       document.getElementById("password").value = account.password;
-//     },
-//   });
-// }
-
 function autofillLogin(account) {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     const activeTab = tabs[0];
